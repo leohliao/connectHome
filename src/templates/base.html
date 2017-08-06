@@ -7,16 +7,18 @@
   <body>
     <h1>Hello World!</h1>
     <p>Let's learn Django and python all together</p>
-    <p>This is {{html_var}} coming through </p>
+    <p>This is {% verbatim %}{{html_var}}{% endverbatim %} coming through </p>
   </br>
   <p>
-    {% if bool_item %}
+    {% if num is not None %}
     Random number is {{ num }}
     {% endif %}
   </p>
-
   <p>
     {% for some_item in some_list %}
+      {% if some_item|divisibleby:"2" %}
+        Even Number
+      {% endif %}
       {{ some_item }} </br>
     {% endfor %}
   </p>
